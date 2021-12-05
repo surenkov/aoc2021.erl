@@ -1,0 +1,10 @@
+.kerl_config
+erlang/
+rebar3
+
+*.beam
+*.dump
+in.txt
+input.txt
+
+**/.DS_Store
