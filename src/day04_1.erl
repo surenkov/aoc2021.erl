@@ -49,4 +49,4 @@ read_single_board(Acc, N) ->
         eof        -> read_single_board(Acc, 0)
     end.
 
-prepare_board(Rows) -> {Rows, utils:transpose(Rows)}.
+prepare_board(Rows) -> {Rows, utils:tail_transpose(Rows)}.

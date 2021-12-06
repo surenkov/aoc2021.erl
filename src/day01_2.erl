@@ -16,7 +16,7 @@ read_input(Acc) ->
     end.
 
 
-sliding_signals(HeadList = [_ | MidList = [_ | RestList = [_ | _]]]) ->
+sliding_signals(HeadList = [_ | MidList = [_ | RestList]]) ->
     sliding_signals(0, 0, HeadList, MidList, RestList);
 sliding_signals(_) -> 0.
 
