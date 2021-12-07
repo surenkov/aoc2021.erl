@@ -9,7 +9,7 @@ main(_) ->
     WinRatio = calc_ratio(WinBoard),
     io:format("~p * ~p = ~p~n", [WinRatio, N, WinRatio*N]).
 
-read_input() -> {read_input_seq(), read_boards([])}.
+read_input() -> {utils:read_int_line(), read_boards([])}.
 
 
 play_bingo(InputSeq, Boards) -> play_bingo(InputSeq, Boards, [], nil).
@@ -30,11 +30,6 @@ is_winner(_)  -> false.
 
 calc_ratio({Rows, _}) -> lists:sum([Y || X <- Rows, Y <- X]).
 
-
-read_input_seq() ->
-    SeqLine = lists:droplast(io:get_line("")),
-    SplitArgs = string:split(SeqLine, ",", all),
-    lists:map(fun list_to_integer/1, SplitArgs).
 
 read_boards(Acc) ->
     case io:fread("", "") of

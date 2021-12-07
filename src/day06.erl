@@ -32,9 +32,7 @@ count_population(Gen) ->
     lists:sum([C || {_, C} <- Gen]).
 
 read_input() ->
-    SeqLine = lists:droplast(io:get_line("")),
-    SplitArgs = string:split(SeqLine, ",", all),
-    Generations = lists:map(fun list_to_integer/1, SplitArgs),
+    Generations = utils:read_int_line(),
     count_ages(lists:sort(Generations)).
 
 count_ages([H|T]) -> count_ages(T, [{H, 1}]).
